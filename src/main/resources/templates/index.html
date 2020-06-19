@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Dona Rosa Presentes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+      <div class="container">
+        <h1>Dona Rosa Presentes</h1>
+
+        <div th:if="${lista.size() > 0}">
+            <div class="row m-1" th:each="cadastro : ${lista}">
+                <div class="col-6">
+                  <a th:href="@{/mostrar/{id}(id=${cadastro.id})}" th:text="${cadastro.nome}"></a>
+                </div>
+                
+                <div class="col-3">
+                <a th:href="@{/editar/{id}(id=${cadastro.id})}" class="btn btn-success btn-sm">EDITAR</a>
+                </div>
+                
+                <div class="col-3">
+                  <a th:href="@{/deletar/{id}(id=${cadastro.id})}" class="btn btn-danger btn-sm">DELETAR</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <a class="btn btn-primary" href="/cadastrar">Cadastrar Novo Cliente</a>
+
+      </div>
+    
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Dona Rosa Presentes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+      
+
+    <div class="container">
+        <h1>Dona Rosa Presentes</h1>
+            <h2>Cadastro de Cliente</h2>
+
+            <form method="POST" action="/cadastrar">
+                <div class="form-group">
+                  <label for="nome">Nome do Cliente</label>
+                  <input type="text" name="nome" id="nome" class="form-control" placeholder="ex: José da Silva" th:value="${cadastro.nome}">
+                </div>
+
+                <div class="form-group">
+                    <label for="idade">Idade</label>
+                    <input type="number" name="idade" id="idade" class="form-control" placeholder="ex: 22" th:value="${cadastro.idade}">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="ex: exemplo@exemplo.com" th:value="${cadastro.email}">
+                </div>
+
+                <div class="form-group">
+                    <label for="nome">Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control" th:value="${cadastro.senha}">
+                </div>
+
+                <input type="hidden" name="id" th:value="${cadastro.id}">
+
+                <input class="btn btn-primary" type="submit" name="enviar" id="enviar" value="CADASTRAR">
+
+            </form>
+            
+
+        <a href="/" class="btn btn-primary">VOLTAR</a>
+
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
